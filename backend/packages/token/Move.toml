@@ -1,0 +1,16 @@
+[package]
+name = "deep_token"
+edition = "2024.beta"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
+
+[addresses]
+deep_token = "0x0"
+
+[environments]
+devnet = "10355f06"
+
+[dev-dependencies]
+
+[dev-addresses]
