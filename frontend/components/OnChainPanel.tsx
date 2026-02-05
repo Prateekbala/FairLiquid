@@ -184,26 +184,29 @@ export default function OnChainPanel() {
 
   function registerMartyr() {
     const tx = new Transaction();
-    // Mint DEEP tokens for staking (50000 units = 0.0005 DEEP with 8 decimals)
-    const deepCoins = tx.moveCall({
-      target: `${deepTokenPackageId}::deep::mint`,
+    // Mint DEEP tokens using sui::coin::mint (framework fn returns Coin<DEEP>)
+    // Minimum stake = 1_000_000_000_000 (10,000 DEEP with 8 decimals)
+    const stakeAmount = 1_000_000_000_000;
+    const [deepCoin] = tx.moveCall({
+      target: `0x2::coin::mint`,
+      typeArguments: [quoteAssetType],
       arguments: [
         tx.object(treasuryCapId),
-        tx.pure.u64(50000),
-        tx.pure.address(account!.address),
+        tx.pure.u64(stakeAmount),
       ],
     });
-    // This mints and transfers, so we need to get the coin from the account
-    // Instead, let's just call register_martyr with a fresh coin:
-    // Actually mint returns void (transfers internally). We need to split coin approach.
-    // For demo: use a simpler approach - just call register with dummy values
-    const tx2 = new Transaction();
-    const [coin] = tx2.splitCoins(tx2.gas, [50000]);
-    // Can't use SUI coin as DEEP stake. Let's just register without stake for demo.
-    // Actually let me look at the register_martyr signature more carefully.
-    // For now, register as citizen (no stake required):
-    registerCitizen();
-    return;
+    tx.moveCall({
+      target: `${packageId}::moral_pool::register_martyr`,
+      typeArguments: [baseAssetType, quoteAssetType],
+      arguments: [
+        tx.object(moralPoolId),
+        deepCoin,
+        tx.pure.u64(1_000_000), // min_liquidity
+        tx.pure.u64(100),       // max_spread_bps
+        tx.object("0x6"),       // Clock
+      ],
+    });
+    execTx(tx, "Register Martyr");
   }
 
   function registerCitizen() {
@@ -377,6 +380,14 @@ export default function OnChainPanel() {
               Choose your moral tier. Martyrs commit to crisis liquidity (rewarded). Sovereigns can flee (no penalty, deprioritized).
             </p>
             <div className="flex flex-wrap gap-2">
+              <button
+                onClick={registerMartyr}
+                disabled={txStatus === "pending"}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer disabled:opacity-50"
+                style={{ background: "color-mix(in srgb, var(--tier-martyr) 15%, transparent)", color: "var(--tier-martyr)", border: "1px solid color-mix(in srgb, var(--tier-martyr) 30%, transparent)" }}
+              >
+                <Shield size={12} /> Martyr
+              </button>
               <button
                 onClick={registerCitizen}
                 disabled={txStatus === "pending"}
