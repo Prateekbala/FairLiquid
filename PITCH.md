@@ -105,21 +105,21 @@
 
 ### Phase 1 — Normal Markets (15 sec)
 
-> "Phase one: calm before the storm. All 8 MMs are active. Spreads are tight — 30-40 bps. Liquidity is deep. Price is stable around $1,000. This was crypto on January 13th — the day before everything started falling."
+> "Phase one: calm before the storm. We're tracking a $4 SUI token. All 8 MMs are active. Spreads are razor-tight — 5 basis points. Both the traditional pool and LEX JUSTICIA look identical. Liquidity is at 100%. This was crypto on January 13th — the day before everything started falling."
 
 ### Phase 2-3 — Crisis Hits (30 sec)
 
 > "Now volatility spikes. The crisis oracle fires — just like our `crisis_oracle.move` contract would when it detects volatility above 3,000 basis points."
 
-> "Watch the comparison panel. Left side — traditional pool. This is what's happening on Uniswap, Raydium, and every DEX right now. Spreads at 450+ bps. Liquidity collapses to 15%. MMs are gone."
+> "Watch the comparison panel. Left side — traditional pool. This is what's happening on Uniswap, Raydium, and every DEX right now. The price crashes from $4 down toward $2.40 — a 40% drop. Spreads explode from 5 bps to 400-600 bps. Liquidity collapses to under 15%. Only 1-2 MMs remain. Traders face catastrophic slippage."
 
-> "Right side — LEX JUSTICIA. Martyrs can't leave — their stake is locked and their commitment is enforced by `moral_pool.move`. Spreads stay under 40 bps. Liquidity holds at 80%. Orders get filled."
+> "Right side — LEX JUSTICIA. Price drops the same — market conditions are identical — but the response is completely different. All 3 Martyrs stay. Their spreads are capped at 40 bps maximum by their on-chain commitments. Liquidity holds above 70%. Citizens stay at moderate spreads. The system is working."
 
-> "The MM table at the bottom tells the real story. Martyrs — in gold — their credibility is climbing. They're earning IC-rewards calculated by our `myersonian_scoring.move` virtual value functions. The Sovereigns who fled? Credibility tanking. They're free to leave — that was their choice — but `smart_router.move` remembers. They're last in line for order flow from now on."
+> "Look at the MM table at the bottom. Three Martyrs in gold — AlphaVault, CrisisGuard, SteadyFlow — all active, all holding 40 bps or less. Their credibility scores are climbing from 0.91-0.95 toward 1.0. They're earning IC-rewards calculated by our `myersonian_scoring.move` virtual value functions. The three Sovereigns — QuickFlip, SwiftExit, GhostLiq — fled. Credibility tanking from 0.60 toward 0.40. They're free to leave, no penalty, but `smart_router.move` remembers. They're last in line for order flow from now on."
 
 ### Phase 4 — Recovery (20 sec)
 
-> "Recovery phase. Citizens come back. The Kobeissi Letter's analysis suggests we're near a bottom based on historical parallels to the 2022 FTX collapse. When markets stabilize — our `crisis_oracle.move` checks three conditions: volatility below 20%, liquidity above 70%, spreads below 5x — crisis deactivates."
+> "Recovery phase. Price stabilizes around $3.40 — we've recovered from the $2.40 bottom but haven't hit the pre-crash $4 yet. Citizens come back. The Kobeissi Letter's analysis suggests we're near a bottom based on historical parallels to the 2022 FTX collapse. When markets stabilize — our `crisis_oracle.move` checks three conditions: volatility below 2,000 bps, liquidity above 70%, spreads below 5x — crisis deactivates."
 
 > "Martyrs who stayed earned the most rewards. Their Bayesian credibility scores — updated by our belief function with λ=0.7 weight on proof outcomes — are now the highest in the system."
 
@@ -127,9 +127,9 @@
 
 ### Results Callout (20 sec)
 
-> "Final numbers. Traditional pool: 15% liquidity, 500 bps spreads, 18.3% slippage. LEX JUSTICIA: 85% liquidity, 35 bps spreads, 2.7% slippage."
+> "Final numbers during crisis peak. Traditional pool: 15% liquidity remaining, 500+ bps spreads, only 1-2 MMs active. LEX JUSTICIA: 70%+ liquidity throughout, Martyr spreads capped at 40 bps, 5 of 8 MMs still providing."
 
-> "That's 5.7x more liquidity. 14x tighter spreads. For a trader trying to exit a $10,000 position during this week's crash, that's the difference between losing $270 versus losing $1,830. We save that trader $1,560. Multiply by every trader on every DEX."
+> "That's 4.7x more liquidity during the crisis. Over 12x tighter spreads. For a trader trying to exit a $10,000 position during this week's crash — at the $2.40 bottom — the traditional pool charges 5% slippage ($500 loss). LEX JUSTICIA charges under 0.5% ($50 loss). We save that trader $450 in a single trade. Now multiply by millions of traders across every DEX during every crash."
 
 ---
 
