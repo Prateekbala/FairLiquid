@@ -111,11 +111,11 @@
 
 > "Now volatility spikes. The crisis oracle fires — just like our `crisis_oracle.move` contract would when it detects volatility above 3,000 basis points."
 
-> "Watch the comparison panel. Left side — traditional pool. This is what's happening on Uniswap, Raydium, and every DEX right now. The price crashes from $4 down toward $2.40 — a 40% drop. Spreads explode from 5 bps to 400-600 bps. Liquidity collapses to under 15%. Only 1-2 MMs remain. Traders face catastrophic slippage."
+> "Watch the comparison panel. Left side — traditional pool. This is what's happening on Uniswap, Raydium, and every DEX right now. The price crashes from $4 down toward $2.40 — a 40% drop. Spreads explode from 5 bps to 500 bps — that's a 100x increase, from a 0.05% fee to a 5% fee. Liquidity collapses to under 15%. Only 1-2 MMs remain. Traders face catastrophic slippage."
 
 > "Right side — LEX JUSTICIA. Price drops the same — market conditions are identical — but the response is completely different. All 3 Martyrs stay. Their spreads are capped at 40 bps maximum by their on-chain commitments. Liquidity holds above 70%. Citizens stay at moderate spreads. The system is working."
 
-> "Look at the MM table at the bottom. Three Martyrs in gold — AlphaVault, CrisisGuard, SteadyFlow — all active, all holding 40 bps or less. Their credibility scores are climbing from 0.91-0.95 toward 1.0. They're earning IC-rewards calculated by our `myersonian_scoring.move` virtual value functions. The three Sovereigns — QuickFlip, SwiftExit, GhostLiq — fled. Credibility tanking from 0.60 toward 0.40. They're free to leave, no penalty, but `smart_router.move` remembers. They're last in line for order flow from now on."
+> "Look at the MM table at the bottom. Three Martyrs in gold — AlphaVault, CrisisGuard, SteadyFlow — all active, all holding 40 bps or less. Their credibility scores are climbing from 0.91-0.95 toward 1.0. They're earning IC-rewards — Incentive-Compatible rewards from Corollary 2.2 of the paper — calculated by our `myersonian_scoring.move` virtual value functions. These aren't arbitrary bonuses. They're mathematically optimal payments that make honest behavior the most profitable strategy. If a Martyr claimed 95% uptime but only delivered 80%, the virtual value gap would catch them and they'd get slashed instead of rewarded. The three Sovereigns — QuickFlip, SwiftExit, GhostLiq — fled. Credibility tanking from 0.60 toward 0.40. They're free to leave, no penalty, but `smart_router.move` remembers. They're last in line for order flow from now on."
 
 ### Phase 4 — Recovery (20 sec)
 
