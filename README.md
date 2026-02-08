@@ -4,6 +4,10 @@
 
 > *"Because liquidity extraction is not justice."*
 
+## 🎥 Demo Video
+
+**Watch the Demo:** [https://youtu.be/ZADj0GkTu0k](https://youtu.be/ZADj0GkTu0k)
+
 ---
 
 ## The Problem (Happening Right Now)
